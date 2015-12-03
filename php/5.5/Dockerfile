@@ -1,9 +1,9 @@
 # docker-gitlab-ci-runner-php5.5
 
 FROM bobey/docker-gitlab-ci-runner-php
-MAINTAINER  Olivier Balais "obalais@gmail.com"
+MAINTAINER  James Dinsdale "hi@molovo.co"
 
-ENV PHP_VERSION 5.5.22
+ENV PHP_VERSION 5.5.30
 
 COPY files/ci-runner.ini /root/.phpenv/versions/$PHP_VERSION/etc/conf.d/ci-runner.ini
 
@@ -13,8 +13,11 @@ RUN phpenv install $PHP_VERSION \
 
 # Install PHP PECL extensions
 RUN yes '' | pecl install \
+  intl \
+  mcrypt \
 	mongo \
 	redis \
 	memcache \
 	ssh2-0.12 \
-	xdebug
+	xdebug \
+  xhprof

@@ -1,7 +1,7 @@
 # docker-gitlab-ci-runner
 
 FROM gitlabhq/gitlab-ci-runner
-MAINTAINER  Olivier Balais "obalais@gmail.com"
+MAINTAINER  James Dinsdale "hi@molovo.co"
 
 ADD files/run /sbin/run
 RUN chmod +x /sbin/run

@@ -1,7 +1,7 @@
 # docker-gitlab-ci-runner-php
 
 FROM bobey/docker-gitlab-ci-runner
-MAINTAINER  Olivier Balais "obalais@gmail.com"
+MAINTAINER  James Dinsdale "hi@molovo.co"
 
 ENV PHP_DIR /etc/php5
 ENV PATH /root/.phpenv/bin:/root/.phpenv/shims:$PATH
@@ -19,7 +19,8 @@ RUN apt-get update -y && \
     apt-get install -y git \
                        wget \
                        curl \
-                       apache2 \
+                       nginx \
+                       php-fpm \
                        php-pear
 
 # Install a specific bison version
@@ -45,3 +46,5 @@ RUN ln -s /usr/lib/x86_64-linux-gnu/libfreetype.so /usr/lib/libfreetype.so && \
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/composer
+
+RUN composer global require codeception/codeception
