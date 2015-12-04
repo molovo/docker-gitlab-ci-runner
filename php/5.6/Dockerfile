@@ -3,7 +3,7 @@
 FROM bobey/docker-gitlab-ci-runner-php
 MAINTAINER  James Dinsdale "hi@molovo.co"
 
-ENV PHP_VERSION 5.6.16
+ENV PHP_VERSION 5.6.6
 
 COPY files/ci-runner.ini /root/.phpenv/versions/$PHP_VERSION/etc/conf.d/ci-runner.ini
 
