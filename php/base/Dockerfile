@@ -20,7 +20,6 @@ RUN apt-get update -y && \
                        wget \
                        curl \
                        nginx \
-                       php-fpm \
                        php-pear
 
 # Install a specific bison version
