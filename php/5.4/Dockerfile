@@ -1,6 +1,6 @@
 # docker-gitlab-ci-runner-php5.4
 
-FROM bobey/docker-gitlab-ci-runner-php
+FROM molovo/docker-gitlab-ci-runner-php
 MAINTAINER  James Dinsdale "hi@molovo.co"
 
 ENV PHP_VERSION 5.4.38

@@ -1,9 +1,9 @@
-# docker-gitlab-ci-runner-php5.6
+# docker-gitlab-ci-runner-php7.0
 
 FROM molovo/docker-gitlab-ci-runner-php
 MAINTAINER  James Dinsdale "hi@molovo.co"
 
-ENV PHP_VERSION 5.6.6
+ENV PHP_VERSION 7.0.0
 
 COPY files/ci-runner.ini /root/.phpenv/versions/$PHP_VERSION/etc/conf.d/ci-runner.ini
 
