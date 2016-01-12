@@ -29,13 +29,13 @@ In order to build it, you need to execute the following commands:
 
 ```
 docker build -t gitlabhq/gitlab-ci-runner github.com/gitlabhq/gitlab-ci-runner
-docker build -t bobey/docker-gitlab-ci-runner github.com/bobey/docker-gitlab-ci-runner
+docker build -t molovo/docker-gitlab-ci-runner github.com/molovo/docker-gitlab-ci-runner
 ```
 
 ### Usage
 
 ```
-docker pull bobey/docker-gitlab-ci-runner
+docker pull molovo/docker-gitlab-ci-runner
 ```
 
 Then, you can run as many runners as you want by executing:
@@ -46,7 +46,7 @@ docker run \
   -e REGISTRATION_TOKEN=replaceme \
   -e HOME=/root \
   -e GITLAB_SERVER_FQDN=gitlab.example.com \
-  bobey/docker-gitlab-ci-runner
+  molovo/docker-gitlab-ci-runner
 ```
 
 If you need to pass an ssh key to the runner (a deploy key for example), use the following command:
@@ -58,7 +58,7 @@ docker run \
   -e HOME=/root \
   -e GITLAB_SERVER_FQDN=gitlab.example.com \
   -v /absolute/path/to/your/home/.ssh/id_rsa:/root/.ssh/id_rsa:ro \
-  bobey/docker-gitlab-ci-runner
+  molovo/docker-gitlab-ci-runner
 ```
 
 If you don't mount this optional volume, an ssh-key will be automatically generated and the public key will be displayed
@@ -71,7 +71,7 @@ docker run \
   -e CI_SERVER_URL=https://ci.example.com \
   -e REGISTRATION_TOKEN=replaceme \
   -e HOME=/root --rm -it \
-  bobey/docker-gitlab-ci-runner:latest /bin/bash
+  molovo/docker-gitlab-ci-runner:latest /bin/bash
 ```
 
 ## PHP Images
@@ -93,7 +93,7 @@ docker run \
   -e HOME=/root \
   -e GITLAB_SERVER_FQDN=gitlab.example.com \
   -v /absolute/path/to/your/home/.ssh/id_rsa:/root/.ssh/id_rsa:ro \
-  bobey/docker-gitlab-ci-runner-php5.6
+  molovo/docker-gitlab-ci-runner-php5.6
 ```
 
 In your GitlabCI, a basic phpunit job could looks like this:
@@ -151,16 +151,16 @@ Then, start your runner with an extra `-v` option:
 docker run \
   -e ...
   -v /absolute/path/to/composer-auth.json:/root/.composer/auth.json:ro \
-  bobey/docker-gitlab-ci-runner-php5.6
+  molovo/docker-gitlab-ci-runner-php5.6
 ```
 
 ### Development
 
-This docker image is based on bobey/docker-gitlab-ci-runner image. In order to build it, you need to execute the following
+This docker image is based on molovo/docker-gitlab-ci-runner image. In order to build it, you need to execute the following
 command:
 
 ```
-docker build -t bobey/docker-gitlab-ci-runner-php5.6 github.com/bobey/docker-gitlab-ci-runner/php/5.6
+docker build -t molovo/docker-gitlab-ci-runner-php5.6 github.com/molovo/docker-gitlab-ci-runner/php/5.6
 ```
 
 ## NodeJS Image
@@ -181,16 +181,16 @@ docker run \
   -e HOME=/root \
   -e GITLAB_SERVER_FQDN=gitlab.example.com \
   -v /absolute/path/to/your/home/.ssh/id_rsa:/root/.ssh/id_rsa:ro \
-  bobey/docker-gitlab-ci-runner-nodejs
+  molovo/docker-gitlab-ci-runner-nodejs
 ```
 
 ### Development
 
-This docker image is based on bobey/docker-gitlab-ci-runner image. In order to build it, you need to execute the following
+This docker image is based on molovo/docker-gitlab-ci-runner image. In order to build it, you need to execute the following
 commands:
 
 ```
-docker build -t bobey/docker-gitlab-ci-runner-php github.com/bobey/docker-gitlab-ci-runner/nodejs
+docker build -t molovo/docker-gitlab-ci-runner-php github.com/molovo/docker-gitlab-ci-runner/nodejs
 ```
 
 ## Gitlab CI setup
