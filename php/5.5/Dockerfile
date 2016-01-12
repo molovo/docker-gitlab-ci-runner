@@ -23,6 +23,7 @@ RUN yes '' | pecl install \
   xhprof
 
 RUN echo "extension='redis.so'" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/ci-runner.ini
+RUN composer self-update
 RUN composer global require --prefer-source "codeception/codeception"
 RUN composer global require --prefer-source "codeception/verify"
 RUN composer global require --prefer-source "codeception/specify"
